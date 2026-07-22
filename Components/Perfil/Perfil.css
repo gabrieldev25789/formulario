@@ -1,50 +1,97 @@
 .bemvindo {
   max-width: 500px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   text-align: center;
+  background: #12121a;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .bemvindo h2 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 0.3rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f5f5f7;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
 }
 
 .bemvindo p {
-  color: #666;
-  margin-bottom: 1.5rem;
+  color: #8b8b96;
+  margin-bottom: 1.8rem;
+  font-size: 0.95rem;
+}
+
+.albuns{
+    margin-bottom: 1rem;
 }
 
 .artistas-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.8rem;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
 }
 
 .artista-card {
-  padding: 0.9rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #fff;
+  padding: 1rem;
+  border: 1px solid #26262f;
+  border-radius: 10px;
+  background: #1a1a23;
+  color: #e4e4e7;
   font-size: 0.95rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.25s ease;
 }
 
 .artista-card:hover {
-  border-color: #4f46e5;
-  background: #f5f4ff;
+  border-color: #7c3aed;
+  background: #201a2e;
+  transform: translateY(-2px);
 }
 
 .artista-card.selecionado {
-  background: #4f46e5;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
   color: #fff;
-  border-color: #4f46e5;
+  border-color: #a855f7;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.4);
 }
 
 .artista-escolhido {
-  margin-top: 1.5rem;
+  margin-top: 1.8rem;
+  font-size: 0.95rem;
+  color: #a1a1aa;
+}
+
+.artista-escolhido strong {
+  color: #c084fc;
+}
+
+.artistas-grid h3 {
+  grid-column: 1 / -1;
+  margin-top: 1.2rem;
   font-size: 1rem;
-  color: #333;
+  font-weight: 600;
+  color: #f5f5f7;
+  text-align: left;
+}
+
+.artistas-grid ul {
+  grid-column: 1 / -1;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.artistas-grid li {
+  padding: 0.6rem 0.9rem;
+  background: #1a1a23;
+  border: 1px solid #26262f;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #c084fc;
+  text-align: left;
 }
