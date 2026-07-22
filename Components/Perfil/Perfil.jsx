@@ -1,24 +1,37 @@
+import { useState } from "react"
 import "./Perfil.css"
 
 function Perfil({ nome }) {
 
+    const [select, setSelect] = useState(null)
+
+    const artistas = [
+        {nome: "Eminem"},
+        {nome: "Drake"},
+        {nome: "Kendrick Lamar"},
+        {nome: "J. Cole"},
+        {nome: "Travis Scott"},
+        {nome: "Kanye West"}
+    ]
+
+    function selectArtist(nome){
+        setSelect(nome)
+    }
+
   return (
     <>
-        <div class="bemvindo">
+        <div className="bemvindo">
             <h2>Olá {nome}</h2>
             <p>Escolha um artista:</p>
 
-            <div class="artistas-grid">
-                <button class="artista-card">Eminem</button>
-                <button class="artista-card">Drake</button>
-                <button class="artista-card">Kendrick Lamar</button>
-                <button class="artista-card">J. Cole</button>
-                <button class="artista-card selecionado">Travis Scott</button>
-                <button class="artista-card">Kanye West</button>
+            <div className="artistas-grid">
+                {artistas.map((artista, index)=>(
+                    <button key={index} onClick={()=> selectArtist(artista.nome)} className={select === artista.nome ? "artista-card selecionado" : "artista-card"}>{artista.nome}</button>
+                ))}
             </div>
 
-            <p class="artista-escolhido">
-                Você escolheu: <strong>Travis Scott</strong>
+            <p className="artista-escolhido">
+                Você escolheu: <strong>||||||||||</strong>
             </p>
         </div>
     </>
