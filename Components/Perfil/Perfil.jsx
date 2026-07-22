@@ -6,12 +6,12 @@ function Perfil({ nome }) {
     const [select, setSelect] = useState(null)
 
     const artistas = [
-        {nome: "Eminem"},
-        {nome: "Drake"},
-        {nome: "Kendrick Lamar"},
-        {nome: "J. Cole"},
-        {nome: "Travis Scott"},
-        {nome: "Kanye West"}
+        {nome: "A$AP Rocky", album: "Testing"},
+        {nome: "Drake", album: "Views"},
+        {nome: "Kendrick Lamar", album: "Damn"},
+        {nome: "J. Cole", album: "Forest Hills" },
+        {nome: "Travis Scott", album: "Astroworld"},
+        {nome: "Kanye West", album: "Graduation"}
     ]
 
     function selectArtist(nome){
@@ -27,6 +27,11 @@ function Perfil({ nome }) {
             <div className="artistas-grid">
                 {artistas.map((artista, index)=>(
                     <button key={index} onClick={()=> selectArtist(artista.nome)} className={select === artista.nome ? "artista-card selecionado" : "artista-card"}>{artista.nome}</button>
+                ))}
+                
+                {select && artistas.map((artista)=>(
+                select === artista.nome && <h3>{artista.album}</h3>
+
                 ))}
             </div>
 
