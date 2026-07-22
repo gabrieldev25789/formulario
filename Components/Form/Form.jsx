@@ -1,8 +1,8 @@
 import "./Form.css"
 import { useState } from "react"
 
-function Form() {
-  const [nome, setNome] = useState("")
+function Form({ nome, setNome }){
+    
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
   const [msg, setMsg] = useState("")
