@@ -1,7 +1,7 @@
 import "./Form.css"
 import { useState } from "react"
 
-function Form({ onEnviar, setExibir }){
+function Form({ onEnviar, setExibir, exibir }){
     
   const [nome, setNome] = useState("")
   const [email, setEmail] = useState("")
@@ -27,6 +27,7 @@ function Form({ onEnviar, setExibir }){
 
   return (
     <>
+    {!exibir && 
       <div className="form">
         <div className="form-group">
           <label htmlFor="nome">Nome:</label>
@@ -60,9 +61,12 @@ function Form({ onEnviar, setExibir }){
 
         <button onClick={handleSubmit} type="submit">Enviar</button>
       </div>
+    }
 
       {msg && <h3>{msg}</h3>}
+    
     </>
+
   )
 }
 
