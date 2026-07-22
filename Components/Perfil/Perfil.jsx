@@ -29,11 +29,18 @@ function Perfil({ nome }) {
                     <button key={index} onClick={()=> selectArtist(artista.nome)} className={select === artista.nome ? "artista-card selecionado" : "artista-card"}>{artista.nome}</button>
                 ))}
                 
-            {select && artistas.map((artista)=>(
-                select === artista.nome && <h3>Albuns: <strong>{artista.album.map((album)=>(
-                    <h3>{album}</h3>
-                ))}</strong></h3>
-                ))}
+            {select && artistas.map((artista) => (
+                select === artista.nome && (
+                    <div key={artista.nome}>
+                        <h3 className="albuns">Álbuns:</h3>
+                        <ul>
+                            {artista.album.map((album, i) => (
+                                <li key={i}>{album}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )
+            ))}
             </div>
 
             {select && (
