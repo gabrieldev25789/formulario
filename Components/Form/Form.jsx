@@ -1,27 +1,33 @@
 import "./Form.css"
 import { useState } from "react"
 
-function Form({ nome, setNome }){
+function Form({ onEnviar, setExibir }){
     
+  const [nome, setNome] = useState("")
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
   const [msg, setMsg] = useState("")
 
-  function handleSubmit(e) {
-    e.preventDefault()
+  function handleSubmit() {
 
     if (!nome || !email || !senha) {
       setMsg("Preencha todos os campos")
       return
     }
 
-    setMsg("")
+    onEnviar(nome)
     console.log(nome, email, senha)
+
+    setNome("")
+    setEmail("")
+    setSenha("")
+    setMsg("")
+    setExibir(true)
   }
 
   return (
     <>
-      <form className="form" onSubmit={handleSubmit}>
+      <div className="form">
         <div className="form-group">
           <label htmlFor="nome">Nome:</label>
           <input 
@@ -52,8 +58,8 @@ function Form({ nome, setNome }){
             value={senha}/>
         </div>
 
-        <button type="submit">Enviar</button>
-      </form>
+        <button onClick={handleSubmit} type="submit">Enviar</button>
+      </div>
 
       {msg && <h3>{msg}</h3>}
     </>
