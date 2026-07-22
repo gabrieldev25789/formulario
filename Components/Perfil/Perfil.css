@@ -1,0 +1,50 @@
+.bemvindo {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.bemvindo h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.bemvindo p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.artistas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.artista-card {
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.artista-card:hover {
+  border-color: #4f46e5;
+  background: #f5f4ff;
+}
+
+.artista-card.selecionado {
+  background: #4f46e5;
+  color: #fff;
+  border-color: #4f46e5;
+}
+
+.artista-escolhido {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #333;
+}
